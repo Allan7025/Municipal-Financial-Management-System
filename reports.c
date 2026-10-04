@@ -22,6 +22,7 @@ void displayReports(void)
 
         scanf("%d", &choice);
 
+<<<<<<< HEAD
         switch (choice)
         {
         case 1:
@@ -46,6 +47,32 @@ void displayReports(void)
 
         default:
             printf("Invalid choice. Please try again.\n");
+=======
+        switch(choice)
+        {
+            case 1:
+                employeeReport();
+                break;
+
+            case 2:
+                budgetReport();
+                break;
+
+            case 3:
+                supplierReport();
+                break;
+
+            case 4:
+                assetReport();
+                break;
+
+            case 5:
+                printf("Returning to Main Menu...\n");
+                break;
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         }
 
     } while (choice != 5);
@@ -86,7 +113,12 @@ void employeeReport(void)
         highestSalary = calculateSalary(
             basicSalary[0],
             housingAllowance[0],
+<<<<<<< HEAD
             transportAllowance[0]);
+=======
+            transportAllowance[0]
+        );
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 
         lowestSalary = highestSalary;
 
@@ -95,7 +127,12 @@ void employeeReport(void)
             salary = calculateSalary(
                 basicSalary[i],
                 housingAllowance[i],
+<<<<<<< HEAD
                 transportAllowance[i]);
+=======
+                transportAllowance[i]
+            );
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 
             totalSalary += salary;
 

@@ -1,7 +1,22 @@
+<<<<<<< HEAD
 #ifndef ASSETS_H
 #define ASSETS_H
 
 #define MAX_ASSETS 100 /* the register can hold up to 100 assets */
+=======
+/*
+ * assets.h - Asset Management module
+ * Municipal Financial Management System (MFMS) - PAP521S Project A
+ * Author: Siyanda B. Ndhlovu (223127981)
+ *
+ * Other files #include this header to use the asset functions.
+ */
+
+#ifndef ASSETS_H
+#define ASSETS_H
+
+#define MAX_ASSETS 100      /* the register can hold up to 100 assets */
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 
 /* Sub-menu: main.c calls this when the user picks "Asset Management" */
 void assetMenu(void);

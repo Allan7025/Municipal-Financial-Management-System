@@ -4,8 +4,12 @@
 #define MAX_DEPTS 50
 #define NAME_LEN 50
 
+<<<<<<< HEAD
 typedef struct
 {
+=======
+typedef struct {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
     char name[NAME_LEN];
     double allocated;
     double expenditure;

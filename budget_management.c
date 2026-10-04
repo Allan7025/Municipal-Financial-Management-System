@@ -6,17 +6,26 @@
 Department budgets[MAX_DEPTS];
 int deptCount = 0;
 
+<<<<<<< HEAD
 void readLine(const char *prompt, char *buffer, int size)
 {
     printf("%s", prompt);
     if (fgets(buffer, size, stdin) == NULL)
     {
+=======
+
+
+void readLine(const char *prompt, char *buffer, int size) {
+    printf("%s", prompt);
+    if (fgets(buffer, size, stdin) == NULL) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         printf("\nInput ended. Exiting.\n");
         exit(0);
     }
     buffer[strcspn(buffer, "\n")] = '\0';
 }
 
+<<<<<<< HEAD
 double calculateRemaining(double allocated, double expenditure)
 {
     return allocated - expenditure;
@@ -24,16 +33,28 @@ double calculateRemaining(double allocated, double expenditure)
 
 const char *getStatus(double allocated, double expenditure)
 {
+=======
+double calculateRemaining(double allocated, double expenditure) {
+    return allocated - expenditure;
+}
+
+const char *getStatus(double allocated, double expenditure) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
     if (expenditure <= allocated)
         return "WITHIN BUDGET";
     else
         return "EXCEEDED BUDGET";
 }
 
+<<<<<<< HEAD
 void readName(const char *prompt, char *name)
 {
     while (1)
     {
+=======
+void readName(const char *prompt, char *name) {
+    while (1) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         readLine(prompt, name, NAME_LEN);
         if (strlen(name) > 0)
             return;
@@ -41,14 +62,22 @@ void readName(const char *prompt, char *name)
     }
 }
 
+<<<<<<< HEAD
 double readAmount(const char *prompt)
 {
+=======
+double readAmount(const char *prompt) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
     char text[100];
     char *end;
     double amount;
 
+<<<<<<< HEAD
     while (1)
     {
+=======
+    while (1) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         readLine(prompt, text, sizeof(text));
         amount = strtod(text, &end);
 
@@ -61,12 +90,19 @@ double readAmount(const char *prompt)
     }
 }
 
+<<<<<<< HEAD
 int findDepartment(const char *name)
 {
     int i;
 
     for (i = 0; i < deptCount; i++)
     {
+=======
+int findDepartment(const char *name) {
+    int i;
+
+    for (i = 0; i < deptCount; i++) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         if (strcmp(budgets[i].name, name) == 0)
             return i;
     }
@@ -74,20 +110,31 @@ int findDepartment(const char *name)
     return -1;
 }
 
+<<<<<<< HEAD
 void addBudget(void)
 {
     char name[NAME_LEN];
 
     if (deptCount == MAX_DEPTS)
     {
+=======
+void addBudget(void) {
+    char name[NAME_LEN];
+
+    if (deptCount == MAX_DEPTS) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         printf("  Error: Maximum number of departments reached.\n");
         return;
     }
 
     readName("Department name: ", name);
 
+<<<<<<< HEAD
     if (findDepartment(name) != -1)
     {
+=======
+    if (findDepartment(name) != -1) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         printf("  Error: %s already has a budget.\n", name);
         return;
     }
@@ -100,8 +147,12 @@ void addBudget(void)
     printf("  Budget saved for %s.\n", name);
 }
 
+<<<<<<< HEAD
 void addExpenditure(void)
 {
+=======
+void addExpenditure(void) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
     char name[NAME_LEN];
     int index;
     double amount, remaining;
@@ -109,8 +160,12 @@ void addExpenditure(void)
     readName("Department name: ", name);
     index = findDepartment(name);
 
+<<<<<<< HEAD
     if (index == -1)
     {
+=======
+    if (index == -1) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         printf("  Error: Department not found.\n");
         return;
     }
@@ -120,7 +175,12 @@ void addExpenditure(void)
 
     remaining = calculateRemaining(
         budgets[index].allocated,
+<<<<<<< HEAD
         budgets[index].expenditure);
+=======
+        budgets[index].expenditure
+    );
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 
     printf("  Remaining budget: N$%.2f\n", remaining);
 
@@ -128,8 +188,12 @@ void addExpenditure(void)
         printf("  WARNING: %s has EXCEEDED its budget!\n", name);
 }
 
+<<<<<<< HEAD
 void displayDepartment(Department d)
 {
+=======
+void displayDepartment(Department d) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
     printf("\nDepartment: %s\n", d.name);
     printf("Allocated Budget: N$%.2f\n", d.allocated);
     printf("Expenditure: N$%.2f\n", d.expenditure);
@@ -139,12 +203,19 @@ void displayDepartment(Department d)
            getStatus(d.allocated, d.expenditure));
 }
 
+<<<<<<< HEAD
 void displayAll(void)
 {
     int i;
 
     if (deptCount == 0)
     {
+=======
+void displayAll(void) {
+    int i;
+
+    if (deptCount == 0) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         printf("  No budgets entered yet.\n");
         return;
     }
@@ -153,16 +224,25 @@ void displayAll(void)
         displayDepartment(budgets[i]);
 }
 
+<<<<<<< HEAD
 void displayExceeded(void)
 {
+=======
+void displayExceeded(void) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
     int i, found = 0;
 
     printf("\nDepartments over budget:\n");
 
+<<<<<<< HEAD
     for (i = 0; i < deptCount; i++)
     {
         if (budgets[i].expenditure > budgets[i].allocated)
         {
+=======
+    for (i = 0; i < deptCount; i++) {
+        if (budgets[i].expenditure > budgets[i].allocated) {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
             printf("  %s - over by N$%.2f\n",
                    budgets[i].name,
                    budgets[i].expenditure - budgets[i].allocated);
@@ -174,12 +254,19 @@ void displayExceeded(void)
         printf("  None. All departments are within budget.\n");
 }
 
+<<<<<<< HEAD
 void budgetMenu(void)
 {
     char choice[10];
 
     do
     {
+=======
+void budgetMenu(void) {
+    char choice[10];
+
+    do {
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         printf("\n===== BUDGET MANAGEMENT =====\n");
         printf("1. Enter departmental budget\n");
         printf("2. Enter expenditure\n");
@@ -204,3 +291,7 @@ void budgetMenu(void)
 
     } while (strcmp(choice, "0") != 0);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9

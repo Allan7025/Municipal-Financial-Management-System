@@ -105,7 +105,12 @@ void displayEmployees()
                calculateSalary(
                    basicSalary[i],
                    housingAllowance[i],
+<<<<<<< HEAD
                    transportAllowance[i]));
+=======
+                   transportAllowance[i]
+               ));
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
     }
 }
 
@@ -144,7 +149,12 @@ void searchEmployee()
                    calculateSalary(
                        basicSalary[i],
                        housingAllowance[i],
+<<<<<<< HEAD
                        transportAllowance[i]));
+=======
+                       transportAllowance[i]
+                   ));
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 
             found = 1;
             break;

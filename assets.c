@@ -1,9 +1,23 @@
+<<<<<<< HEAD
+=======
+/*
+ * assets.c - Asset Management module
+ * Municipal Financial Management System (MFMS) - PAP521S Project A
+ * Author: Siyanda B. Ndhlovu (223127981)
+ *
+ * Keeps a register of municipal assets (vehicles, computers, buildings,
+ * equipment, office furniture) and lets the user add, display, search
+ * and summarise them.
+ */
+
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "assets.h"
 
 /* ---------- Sizes and limits ---------- */
+<<<<<<< HEAD
 #define ID_LENGTH 10   /* max 9 characters, e.g. "AST001"   */
 #define NAME_LENGTH 26 /* max 25 characters                 */
 #define TYPE_LENGTH 20
@@ -14,6 +28,18 @@
 #define CONDITION_COUNT 4
 #define MAX_ASSET_VALUE 1000000000.0 /* N$1 billion upper limit   */
 #define TABLE_WIDTH 99
+=======
+#define ID_LENGTH        10     /* max 9 characters, e.g. "AST001"   */
+#define NAME_LENGTH      26     /* max 25 characters                 */
+#define TYPE_LENGTH      20
+#define DEPT_LENGTH      21     /* max 20 characters                 */
+#define CONDITION_LENGTH 12
+#define INPUT_LENGTH     100    /* size of the temporary input buffer */
+#define TYPE_COUNT       6
+#define CONDITION_COUNT  4
+#define MAX_ASSET_VALUE  1000000000.0   /* N$1 billion upper limit   */
+#define TABLE_WIDTH      99
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 
 /* ---------- The asset register (parallel arrays) ----------
  * Asset number i is stored at position i of EVERY array:
@@ -28,9 +54,18 @@ static int assetCount = 0;
 
 /* Fixed lists the user chooses from */
 static char typeList[TYPE_COUNT][TYPE_LENGTH] = {
+<<<<<<< HEAD
     "Vehicle", "Computer", "Building", "Equipment", "Office Furniture", "Other"};
 static char conditionList[CONDITION_COUNT][CONDITION_LENGTH] = {
     "Excellent", "Good", "Fair", "Poor"};
+=======
+    "Vehicle", "Computer", "Building", "Equipment", "Office Furniture", "Other"
+};
+static char conditionList[CONDITION_COUNT][CONDITION_LENGTH] = {
+    "Excellent", "Good", "Fair", "Poor"
+};
+
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 
 /* =====================================================================
  *  HELPER FUNCTIONS (only used inside this file)
@@ -174,7 +209,12 @@ static int readChoice(char prompt[], int min, int max)
         printf("%s", prompt);
         readLine(input);
 
+<<<<<<< HEAD
         if (sscanf(input, "%d %c", &choice, &extra) == 1 && choice >= min && choice <= max)
+=======
+        if (sscanf(input, "%d %c", &choice, &extra) == 1
+            && choice >= min && choice <= max)
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         {
             return choice;
         }
@@ -264,6 +304,10 @@ static int chooseCondition(void)
     return readChoice("Choose condition: ", 1, CONDITION_COUNT) - 1;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
 /* =====================================================================
  *  PUBLIC FUNCTIONS (declared in assets.h)
  * ===================================================================== */
@@ -290,6 +334,7 @@ void assetMenu(void)
 
         switch (choice)
         {
+<<<<<<< HEAD
         case 1:
             addAsset();
             break;
@@ -311,6 +356,29 @@ void assetMenu(void)
         case 7:
             printf("Returning to main menu...\n");
             break;
+=======
+            case 1:
+                addAsset();
+                break;
+            case 2:
+                displayAssets();
+                break;
+            case 3:
+                searchAssetById();
+                break;
+            case 4:
+                searchAssetsByDepartment();
+                break;
+            case 5:
+                searchAssetsByType();
+                break;
+            case 6:
+                assetSummary();
+                break;
+            case 7:
+                printf("Returning to main menu...\n");
+                break;
+>>>>>>> 89b179fea9aaabbc5ba642d789f71163b3d039c9
         }
     } while (choice != 7);
 }
